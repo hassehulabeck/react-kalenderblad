@@ -6,6 +6,8 @@ import App from "./App";
 const idag = new Date();
 
 ReactDOM.render(
-    <App idag={idag} names={"Bernt, Benny"} />,
+    <App idag={idag} names={"Bernt, Benny"}>
+        Sista dagen för sommardäck
+    </App>,
     document.getElementById("root")
 );
