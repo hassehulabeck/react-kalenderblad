@@ -2,15 +2,44 @@ import React from "react";
 import "./App.css";
 
 const App = (props) => {
+    const weekdays = [
+        "Söndag",
+        "Måndag",
+        "Tisdag",
+        "Onsdag",
+        "Torsdag",
+        "Fredag",
+        "Lördag",
+        "Söndag",
+    ];
+    const months = [
+        "Januari",
+        "Februari",
+        "Mars",
+        "April",
+        "Maj",
+        "Juni",
+        "Juli",
+        "Augusti",
+        "September",
+        "Oktober",
+        "November",
+        "December",
+    ];
     console.log(props.idag);
     return (
         <section className="kalenderBlad">
-            <div className="year">2010</div>
-            <div className="week">v 3</div>
-            <div className="weekday">Onsdag</div>
-            <div className="date">15</div>
-            <div className="month">Januari</div>
-            <div className="names">Helga, Helge</div>
+            <div className="year">{props.idag.getFullYear()}</div>
+            <div className="week">
+                v.
+                {Math.floor(
+                    props.idag.getUTCDate() + (props.idag.getMonth() * 30) / 7
+                ) - 1}
+            </div>
+            <div className="weekday">{weekdays[props.idag.getDay()]}</div>
+            <div className="date">{props.idag.getUTCDate()}</div>
+            <div className="month">{months[props.idag.getMonth()]}</div>
+            <div className="names">{props.names}</div>
             <div className="additional">{props.children}</div>
         </section>
     );
