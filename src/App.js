@@ -1,26 +1,19 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = (props) => {
+    console.log(props.idag);
+    return (
+        <section className="kalenderBlad">
+            <div className="year">2010</div>
+            <div className="week">v 3</div>
+            <div className="weekday">Onsdag</div>
+            <div className="date">15</div>
+            <div className="month">Januari</div>
+            <div className="names">Helga, Helge</div>
+            <div className="additional">{props.children}</div>
+        </section>
+    );
+};
 
 export default App;

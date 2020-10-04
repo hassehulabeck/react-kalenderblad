@@ -1,38 +1,47 @@
-.App {
-  text-align: center;
+.kalenderBlad {
+    flex: 0 1 auto;
+    background-color: aliceblue;
+    box-shadow: 2px 2px 9px gray;
+    padding: 1em 2em;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: minmax(30px, auto);
+    grid-template-areas:
+        "year . week"
+        "weekday weekday weekday"
+        "date date date"
+        "month month month"
+        "names names names"
+        "additional additional additional";
+}
+div {
+    text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.year {
+    grid-area: year;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.week {
+    grid-area: week;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.weekday {
+    grid-area: weekday;
+    font-size: 2.5em;
 }
-
-.App-link {
-  color: #61dafb;
+.date {
+    grid-area: date;
+    font-size: 6em;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.month {
+    grid-area: month;
+    font-size: 2em;
+}
+.names {
+    margin-top: 0.4em;
+    grid-area: names;
+    font-style: italic;
+    font-size: 0.8em;
+}
+.additional {
+    grid-area: additional;
 }
