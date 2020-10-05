@@ -10,7 +10,6 @@ const App = (props) => {
         "Torsdag",
         "Fredag",
         "Lördag",
-        "Söndag",
     ];
     const months = [
         "Januari",
@@ -26,15 +25,15 @@ const App = (props) => {
         "November",
         "December",
     ];
-    console.log(props.idag);
+    console.log(props.children);
     return (
         <section className="kalenderBlad">
             <div className="year">{props.idag.getFullYear()}</div>
             <div className="week">
                 v.
                 {Math.floor(
-                    props.idag.getUTCDate() + (props.idag.getMonth() * 30) / 7
-                ) - 1}
+                    props.idag.getUTCDate() + (props.idag.getMonth() * 28) / 7
+                )}
             </div>
             <div className="weekday">{weekdays[props.idag.getDay()]}</div>
             <div className="date">{props.idag.getUTCDate()}</div>
